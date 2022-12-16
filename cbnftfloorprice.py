@@ -134,7 +134,7 @@ def remove_outliers(array: npt.NDArray[np.float64]) -> ta.List[float]:
     array_median = np.median(array)
     array_mad = stats.median_abs_deviation(array)
     lb = array_median - 3 * array_mad
-    ub = array_median + 3 + array_mad
+    ub = array_median + 3 * array_mad
 
     result = [float(elem) for elem in array if elem >= lb and elem <= ub]
 
